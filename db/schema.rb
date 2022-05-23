@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2022_05_23_151000) do
     t.string "model"
     t.integer "horsepower"
     t.integer "year"
-    t.integer "killometers"
+    t.integer "kilometers"
     t.string "plate"
     t.string "energy"
     t.integer "seats"
