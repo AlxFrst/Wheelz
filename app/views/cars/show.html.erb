@@ -47,37 +47,42 @@
   </div>
 
   <div class="card-price">
-  <h2><%= @car.price %> € / jour</h2>
-  <form class="row g-3 calkilo">
-    <div class="col-md-6 start-date">
-      <label for="inputEmail4" class="form-label">ARRIVEE</label>
-      <input type="date" class="form-control" id="inputEmail4">
+    <div class="top-card">
+      <h2><%= @car.price %></h2><p>€ / jour</p>
     </div>
-    <div class="col-md-6 end-date">
-      <label for="inputPassword4" class="form-label">DEPART</label>
-      <input type="date" class="form-control" id="inputPassword4">
+    <form class="row g-3 calkilo">
+      <div class="col-md-6 start-date">
+        <label for="inputEmail4" class="form-label">ARRIVEE</label>
+        <input type="date" class="form-control" id="inputEmail4">
+      </div>
+      <div class="col-md-6 end-date">
+        <label for="inputPassword4" class="form-label">DEPART</label>
+        <input type="date" class="form-control" id="inputPassword4">
+      </div>
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Nombre de kilometres</label>
+        <input type="number" class="form-control" id="inputAddress" step=100 min=200 max=5000>
+      </div>
+    </form>
+    <div class="d-grid gap-2">
+      <button type="button" class="btn btn-danger">Réserver</button>
     </div>
-    <div class="col-12">
-      <label for="inputAddress" class="form-label">Nombre de kilometres</label>
-      <input type="number" class="form-control" id="inputAddress" step=100 min=200 max=5000>
-    </div>
-  </form>
-  <div class="d-grid gap-2">
-    <button type="button" class="btn btn-danger">Réserver</button>
-  </div>
-  <p class='add-comment'>Ajouter un commentaire</p>
-  <input type="text" class='comment'>
-  <p class='legal'>Le prix total de la location peut varier en fonction du nombre de kilomètres réalisés</p>
+    <p class='add-comment'>Ajouter un commentaire</p>
+    <input type="text" class='comment'>
+    <p class='legal'>Le prix total de la location peut varier en fonction du nombre de kilomètres réalisés</p>
 
-  <div class="calcul">
-    <p><%= @car.price %>€ x 9 jours</p>
-    <p><%= (@car.price * 9) %></p>
-  </div>
-  <div class="total">
-    <p>TOTAL</p>
-    <p><%= (@car.price * 9) %></p>
-  </div>
+    <div class="calcul">
+      <p><%= @car.price %>€ x 9 jours</p>
+      <p><%= (@car.price * 9) %></p>
+    </div>
+    <div class="total">
+      <p>TOTAL</p>
+      <p><%= (@car.price * 9) %></p>
+    </div>
 </section>
 
-<section class="map" id="map">
-</section>
+<section style="width: 100%; height: 40em;"
+  data-controller="mapbox"
+  data-mapbox-latitude-value="<%= @car.latitude %>"
+  data-mapbox-longitude-value="<%= @car.longitude %>"
+  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></section>

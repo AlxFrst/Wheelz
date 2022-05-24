@@ -14,6 +14,9 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(params_validate)
     @car.user = current_user
+    results = Geocoder.search("#{@car.user.street}, #{@car.user.city}")
+    @car.latitude = results.first.coordinates[0]
+    @car.longitude = results.first.coordinates[1]
     if @car.save!
       redirect_to car_path(@car)
     else
