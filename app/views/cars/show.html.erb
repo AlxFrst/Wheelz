@@ -10,11 +10,6 @@
   </div>
 </div>
 <div id="carSlider" class="carousel slide" data-bs-ride="true">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carSlider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carSlider" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carSlider" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
   <div class="carousel-inner">
     <div class="carousel-item active"
     style='background-image:url("https://cdn.classic-trader.com/I/images/1920_1920_inset/vehicle_ad_standard_image_a76ca661a7148372cb215f178ce498cb.jpg")'>
@@ -46,31 +41,43 @@
       Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure consequuntur magni maxime dolore numquam ut,
       quis repellat natus officia quos, nobis laboriosam aspernatur. Vel numquam aliquid, omnis ut quae quod!</p>
     </div>
+    <div class="icons">
+      <i class="fa-solid fa-smoking"></i><i class="fa-solid fa-dog"></i><i class="fa-solid fa-gas-pump"></i>
+    </div>
   </div>
 
   <div class="card-price">
   <h2><%= @car.price %> € / jour</h2>
-  <div class="calkilo">
-  ARRIVÉE
-  <input type="date" name="start_date">
-  DÉPART
-  <input type="date" name="end_date">
-  VOYAGEURS
-  1 voyageur
+  <form class="row g-3 calkilo">
+    <div class="col-md-6 start-date">
+      <label for="inputEmail4" class="form-label">ARRIVEE</label>
+      <input type="date" class="form-control" id="inputEmail4">
+    </div>
+    <div class="col-md-6 end-date">
+      <label for="inputPassword4" class="form-label">DEPART</label>
+      <input type="date" class="form-control" id="inputPassword4">
+    </div>
+    <div class="col-12">
+      <label for="inputAddress" class="form-label">Nombre de kilometres</label>
+      <input type="number" class="form-control" id="inputAddress" step=100 min=200 max=5000>
+    </div>
+  </form>
+  <div class="d-grid gap-2">
+    <button type="button" class="btn btn-danger">Réserver</button>
   </div>
-  <button>Réserver</button>
-  <p>Ajouter un commentaire</p>
-  <input type="text">
-  <p>Aucun montant ne vous sera débité pour le moment
-  Le prix total de la location peut varier en fonction du nombre de kilomètres réalisés</p>
+  <p class='add-comment'>Ajouter un commentaire</p>
+  <input type="text" class='comment'>
+  <p class='legal'>Le prix total de la location peut varier en fonction du nombre de kilomètres réalisés</p>
 
   <div class="calcul">
-  <p><%= @car.price %> * 9 jours</p>
-  <p><%= (@car.price * 9) %></p>
+    <p><%= @car.price %>€ x 9 jours</p>
+    <p><%= (@car.price * 9) %></p>
   </div>
   <div class="total">
-  <p>TOTAL</p>
-  <p><%= (@car.price * 9) %></p>
+    <p>TOTAL</p>
+    <p><%= (@car.price * 9) %></p>
   </div>
-  </div>
+</section>
+
+<section class="map" id="map">
 </section>
