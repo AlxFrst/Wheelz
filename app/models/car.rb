@@ -11,4 +11,5 @@ class Car < ApplicationRecord
   validates :energy, presence: true
   validates :seats, presence: true, numericality: { only_integer: true }, length: { maximum: 2 }
   validates :user_id, presence: true
+  validates :price, presence: true, numericality: { only_integer: true }, length: { maximum: 4 }
 end

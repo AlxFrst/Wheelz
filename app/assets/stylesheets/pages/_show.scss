@@ -1,0 +1,33 @@
+a {
+  text-decoration: none;
+  font-size: medium;
+}
+
+.upper-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.describe {
+  border-bottom: 0.03em solid grey;
+  border-top: 0.03em solid grey;
+  padding: 0.7em 0;
+}
+
+p {
+  font-size: medium;
+}
+
+body {
+  color: $color-figma;
+}
+
+.back {
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-side {
+  margin-right: 3em;
+}

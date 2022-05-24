@@ -20,5 +20,5 @@ User.all.each do |i|
   Car.create!(brand: Faker::Vehicle.make, model:Faker::Vehicle.model, color: Faker::Vehicle.color,
     horsepower: rand(200..900), year:Faker::Vehicle.year, kilometers:Faker::Vehicle.kilometrage,
     plate:Faker::Vehicle.license_plate, energy:Faker::Vehicle.fuel_type, seats:Faker::Vehicle.door_count,
-    user_id: i.id)
+    price: rand(100..2500), user_id: i.id)
 end
