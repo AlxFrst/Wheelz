@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <h1>Wheelz</h1>
     <% end %>
     <div class="search-bar">
@@ -15,8 +15,8 @@
     </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="nav-buttons d-flex justify-content-between">
-        <%= link_to "Sign up", "#", class: "nav-link signup" %>
-        <%= link_to "Login", "#", class: "nav-link login" %>
+        <%= link_to "Sign up", new_user_registration_path, class: "nav-link signup" %>
+        <%= link_to "Login", user_session_path, class: "nav-link login" %>
       </div>
     </div>
   </div>
