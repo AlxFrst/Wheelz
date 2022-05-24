@@ -22,6 +22,10 @@
   }
 }
 
+#search_query{
+  background-color: white;
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
@@ -31,7 +35,7 @@
 }
 
 .search-bar {
-  width: 50%;
+  width: 30%;
 
   #search_query {
     border-radius: 2em;
