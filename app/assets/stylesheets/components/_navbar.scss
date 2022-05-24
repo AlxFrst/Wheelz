@@ -1,7 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-
+  border-bottom: 1px solid #e5e5e5;
   h1 {
     font-weight: bold;
     color: #667080;
@@ -20,6 +20,10 @@
       margin: 15px;
     }
   }
+  .user-profil{
+    color: white;
+  }
+
 }
 
 #search_query{
