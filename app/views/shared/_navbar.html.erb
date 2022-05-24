@@ -16,7 +16,7 @@
     <%if user_signed_in? %>
       <ul class="user-profil">
         <li class="nav-item dropdown">
-          <% if current_user.nil? %>
+          <% if current_user.avatar.key.nil? %>
             <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgsaRe2zqH_BBicvUorUseeTaE4kxPL2FmOQ&usqp=CAU", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
             <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
