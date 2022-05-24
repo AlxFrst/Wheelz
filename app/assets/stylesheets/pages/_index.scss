@@ -2,26 +2,24 @@
 @import "home";
 @import "show";
 
-.filter-button{
+.filter-button {
   border: solid 1px #667080;
   padding: 10px 30px;
   border-radius: 1.1em;
-  a{
+  a {
     text-decoration: none;
     font-size: 1.3em;
     color: #667080;
-    &:hover{
+    &:hover {
       color: white;
     }
   }
 
-  &:hover{
+  &:hover {
     background-color: #667080;
-    a, i{
+    a,
+    i {
       color: white;
     }
   }
-
-
-
 }
