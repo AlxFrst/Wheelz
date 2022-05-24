@@ -1,48 +1,28 @@
-.card-body img{
+.card-body img {
   width: 100%;
   height: 300px;
   border-radius: 1.1em 1.1em 0 0;
 }
 
-.card{
-  border-radius: 1.1em;
+.card {
   color: grey;
+  .days {
+    opacity: 0.5;
+    font-weight: 0.2em;
+  }
 }
 
-.card img{
+.card img {
   border-radius: 1.1em 1.1em 0 0;
 }
 
-.card-header{
+.card-header {
   background-color: white;
   border: none;
   margin: 0;
   padding: 0;
 }
 
-.card a{
+.card a {
   color: black;
-}
-
-
-.filter-button{
-  border: solid 1px #667080;
-  padding: 10px 30px;
-  border-radius: 1.1em;
-  a{
-    text-decoration: none;
-    font-size: 1.3em;
-    color: #667080;
-    &:hover{
-      color: white;
-    }
-  }
-
-  &:hover{
-    background-color: #667080;
-    a{
-      color: white;
-    }
-  }
-
 }
