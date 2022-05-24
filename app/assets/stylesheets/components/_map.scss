@@ -1,0 +1,11 @@
+/* app/assets/application.scss */
+/* [...] */
+/* In the "external libraries" section */
+@import "mapbox-gl/dist/mapbox-gl";
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
