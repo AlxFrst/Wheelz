@@ -1,4 +1,15 @@
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 d-flex justify-content-between">
+      <h3>Cars find</h3>
+      <div class="filter-button">
+        <i class="far fa-filter"></i>
+        <%= link_to "Filter", "#", class: "car-filter" %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row row-cols-1 row-cols-md-3 g-4 my-2">
   <div class="col">
     <div class="card">
       <img src="https://cdn.motor1.com/images/mgl/nGzgl/s1/2021-bugatti-chiron-front.jpg" id="car-img" class="card-img-top">

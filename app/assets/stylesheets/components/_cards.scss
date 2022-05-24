@@ -23,3 +23,26 @@
 .card a{
   color: black;
 }
+
+
+.filter-button{
+  border: solid 1px #667080;
+  padding: 10px 30px;
+  border-radius: 1.1em;
+  a{
+    text-decoration: none;
+    font-size: 1.3em;
+    color: #667080;
+    &:hover{
+      color: white;
+    }
+  }
+
+  &:hover{
+    background-color: #667080;
+    a{
+      color: white;
+    }
+  }
+
+}
