@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :username, presence: true
   validates :birthday, presence: true
   validates :city, presence: true
+  validates :country, presence: true
   validates :license, presence: true
 
   private
