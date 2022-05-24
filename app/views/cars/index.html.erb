@@ -29,7 +29,7 @@
           </div>
           <div class="price d-flex justify-content-between">
             <h4><%= car.price%>€/<span class="days"> days</span></h4>
-            <a href="">See more</a>
+            <%= link_to 'see more', car_path(car)%>
           </div>
         </div>
       </div>
