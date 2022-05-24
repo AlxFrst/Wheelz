@@ -13,11 +13,28 @@
         </div>
       <% end %>
     </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div class="nav-buttons d-flex justify-content-between">
-        <%= link_to "Sign up", new_user_registration_path, class: "nav-link signup" %>
-        <%= link_to "Login", user_session_path, class: "nav-link login" %>
+    <%if user_signed_in? %>
+      <ul class="user-profil">
+        <li class="nav-item dropdown">
+          <% if current_user.nil? %>
+            <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgsaRe2zqH_BBicvUorUseeTaE4kxPL2FmOQ&usqp=CAU", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% else %>
+            <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            <%= link_to "Dashboard", "#", class: "dropdown-item" %>
+            <%= link_to "Disconnect", destroy_user_session_path, method:'delete', class: "dropdown-item" %>
+            <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      </ul>
+    <% else %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="nav-buttons d-flex justify-content-between">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link signup" %>
+          <%= link_to "Login", user_session_path, class: "nav-link login" %>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
 </div>
