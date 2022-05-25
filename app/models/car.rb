@@ -21,8 +21,4 @@ class Car < ApplicationRecord
   def address
     "4 avenue des saules, Lille"
   end
-
-  def article_params
-    params.require(:car).permit(photos: [])
-  end
 end
