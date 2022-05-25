@@ -48,36 +48,41 @@
 
   <div class="card-price">
     <div class="top-card">
-      <h2><%= @car.price %></h2><p>€ / jour</p>
+      <div class="card-top-price">
+        <h2><%= @car.price %></h2><p>€ / jour</p>
+      </div>
     </div>
-    <form class="row g-3 calkilo">
-      <div class="col-md-6 start-date">
-        <label for="inputEmail4" class="form-label">ARRIVEE</label>
-        <input type="date" class="form-control" id="inputEmail4">
+    <form action="/cars/1/bookings/new" method="get" class="row g-3 needs-validation" novalidat>
+      <div class="calkilo">
+        <div class="calendar">
+          <div class="col-md-6 start-date">
+            <label for="start-date" class="form-label">ARRIVEE</label>
+            <input type="date" class="form-control" id="start-date" name="start_date" value="start-date" required>
+          </div>
+          <div class="col-md-6 end-date">
+            <label for="end-date" class="form-label">DEPART</label>
+            <input type="date" class="form-control" id="end-date" name="end_date" value="end-date" required>
+          </div>
+        </div>
+        <div class="col-12">
+          <label for="kilometers" class="form-label">Nombre de kilometres</label>
+          <input type="number" class="form-control" id="kilometers" name="kilometers" step=100 min=200 max=5000 value="kilometers" required>
+        </div>
       </div>
-      <div class="col-md-6 end-date">
-        <label for="inputPassword4" class="form-label">DEPART</label>
-        <input type="date" class="form-control" id="inputPassword4">
+      <div class="d-grid gap-2">
+        <button class="btn btn-danger" type="submit">Test</button>
       </div>
-      <div class="col-12">
-        <label for="inputAddress" class="form-label">Nombre de kilometres</label>
-        <input type="number" class="form-control" id="inputAddress" step=100 min=200 max=5000>
-      </div>
-    </form>
-    <div class="d-grid gap-2">
-      <button type="button" class="btn btn-danger">Réserver</button>
-    </div>
     <p class='add-comment'>Ajouter un commentaire</p>
-    <input type="text" class='comment'>
+    <input type="text" class='comment' name="comment">
     <p class='legal'>Le prix total de la location peut varier en fonction du nombre de kilomètres réalisés</p>
-
+    </form>
     <div class="calcul">
-      <p><%= @car.price %>€ x 9 jours</p>
-      <p><%= (@car.price * 9) %></p>
+      <p><%= @car.price %> x 9 jours</p>
+      <p><%= (@car.price * 9) %>€</p>
     </div>
     <div class="total">
       <p>TOTAL</p>
-      <p><%= (@car.price * 9) %></p>
+      <p><%= (@car.price * 9) %>€</p>
     </div>
 </section>
 
