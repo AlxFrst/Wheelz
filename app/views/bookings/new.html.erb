@@ -3,7 +3,6 @@
   <%= f.input :end_date, as: :date, html5: true, input_html: { :value => @end_date} %>
   <%= f.input :comment, input_html: { :value => @comment} %>
   <%= f.input :kilometers, input_html: { :value => @kilometers} %>
-  <%= f.input :car_id, readonly: true %>
-  <%= f.input :user_id, readonly: true %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.submit "Submit review", class: "btn btn-primary" %>
 <% end %>
