@@ -11,10 +11,15 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
-    <main class="container my-3">
+    <% if controller.controller_name != 'profiles' %>
+      <%= render 'shared/navbar' %>
+      <main class="container my-3">
+        <%= controller.controller_name %>
+        <%= yield %>
+      </main>
+      <%= render 'shared/footer' %>
+    <% else %>
       <%= yield %>
-    </main>
-    <%= render 'shared/footer' %>
+    <% end %>
   </body>
 </html>
