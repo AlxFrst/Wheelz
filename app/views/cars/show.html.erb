@@ -1,12 +1,13 @@
 <h1>
   <%= @car.brand %> - <%= @car.model %>
 </h1>
+
 <div class="upper-image">
   <a href="#"><%= @car.user.city %></a>
   <div>
     <a href="#"><i class="fa-solid fa-heart"></i></i>Partager</a>
-  <a href="#"><i class="fa-solid fa-share-from-square"></i>Enregistrer</a>
-</div>
+    <a href="#"><i class="fa-solid fa-share-from-square"></i>Enregistrer</a>
+  </div>
 </div>
 <div id="carSlider" class="carousel slide" data-bs-ride="true">
   <div class="carousel-inner">
@@ -16,69 +17,76 @@
     <div class="carousel-item"
     style='background-image:url("https://images.cadar.io/1f97fb1d-6d44-48f6-a940-0a974ae29f34/full.jpg")'>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carSlider" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carSlider" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carSlider" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carSlider" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<section class="back">
+  <div class="left-side">
+    <div class="under-image">
+      <h2><%= @car.user.city %>, <%= @car.user.street %>:</h2>
+      <h3><%= @car.brand %> <%= @car.model %></h3>
+      <p><%= @car.seats %> sièges - <%= @car.energy.capitalize %> - <%= @car.year %> - <%= @car.horsepower %> hp</p>
+    </div>
+    <div class="describe">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure consequuntur magni maxime dolore numquam ut,
+      quis repellat natus officia quos, nobis laboriosam aspernatur. Vel numquam aliquid, omnis ut quae quod!
+      <br><br>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure consequuntur magni maxime dolore numquam ut,
+      quis repellat natus officia quos, nobis laboriosam aspernatur. Vel numquam aliquid, omnis ut quae quod!</p>
+    </div>
+    <div class="icons">
+      <i class="fa-solid fa-smoking"></i><i class="fa-solid fa-dog"></i><i class="fa-solid fa-gas-pump"></i>
+    </div>
   </div>
-  <section class="back">
-    <div class="left-side">
-      <div class="under-image">
-        <h2><%= @car.user.city %>, <%= @car.user.street %>:</h2>
-        <h3><%= @car.brand %> <%= @car.model %></h3>
-        <p><%= @car.seats %> sièges - <%= @car.energy.capitalize %> - <%= @car.year %> - <%= @car.horsepower %> hp</p>
-      </div>
-      <div class="describe">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure consequuntur magni maxime dolore numquam ut,
-          quis repellat natus officia quos, nobis laboriosam aspernatur. Vel numquam aliquid, omnis ut quae quod!
-          <br>
-          <br>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure consequuntur magni maxime dolore numquam ut,
-          quis repellat natus officia quos, nobis laboriosam aspernatur. Vel numquam aliquid, omnis ut quae quod!</p>
-      </div>
-      <div class="icons">
-        <i class="fa-solid fa-smoking"></i><i class="fa-solid fa-dog"></i><i class="fa-solid fa-gas-pump"></i>
+
+  <div class="card-price">
+    <div class="top-card">
+      <div class="card-top-price">
+        <h2><%= @car.price %></h2><p>€ / jour</p>
       </div>
     </div>
-    <div class="card-price">
-      <div class="top-card">
-        <h2><%= @car.price %></h2>
-        <p>€ / jour</p>
-      </div>
-      <form class="row g-3 calkilo">
-        <div class="col-md-6 start-date">
-          <label for="inputEmail4" class="form-label">ARRIVEE</label>
-          <input type="date" class="form-control" id="inputEmail4">
-        </div>
-        <div class="col-md-6 end-date">
-          <label for="inputPassword4" class="form-label">DEPART</label>
-          <input type="date" class="form-control" id="inputPassword4">
+    <form action="/cars/1/bookings/new" method="get" class="row g-3 needs-validation" novalidat>
+      <div class="calkilo">
+        <div class="calendar">
+          <div class="col-md-6 start-date">
+            <label for="start-date" class="form-label">ARRIVEE</label>
+            <input type="date" class="form-control" id="start-date" name="start_date" value="start-date" required>
+          </div>
+          <div class="col-md-6 end-date">
+            <label for="end-date" class="form-label">DEPART</label>
+            <input type="date" class="form-control" id="end-date" name="end_date" value="end-date" required>
+          </div>
         </div>
         <div class="col-12">
-          <label for="inputAddress" class="form-label">Nombre de kilometres</label>
-          <input type="number" class="form-control" id="inputAddress" step=100 min=200 max=5000>
+          <label for="kilometers" class="form-label">Nombre de kilometres</label>
+          <input type="number" class="form-control" id="kilometers" name="kilometers" step=100 min=200 max=5000 value="kilometers" required>
         </div>
-      </form>
+      </div>
       <div class="d-grid gap-2">
-        <button type="button" class="btn btn-danger">Réserver</button>
+        <button class="btn btn-danger" type="submit">Test</button>
       </div>
-      <p class='add-comment'>Ajouter un commentaire</p>
-      <input type="text" class='comment'>
-      <p class='legal'>Le prix total de la location peut varier en fonction du nombre de kilomètres réalisés</p>
-      <div class="calcul">
-        <p><%= @car.price %>€ x 9 jours</p>
-        <p><%= (@car.price * 9) %></p>
-      </div>
-      <div class="total">
-        <p>TOTAL</p>
-        <p><%= (@car.price * 9) %></p>
-      </div>
-    </section>
-    <section style="width: 100%; height: 40em;"
+    <p class='add-comment'>Ajouter un commentaire</p>
+    <input type="text" class='comment' name="comment">
+    <p class='legal'>Le prix total de la location peut varier en fonction du nombre de kilomètres réalisés</p>
+    </form>
+    <div class="calcul">
+      <p><%= @car.price %> x 9 jours</p>
+      <p><%= (@car.price * 9) %>€</p>
+    </div>
+    <div class="total">
+      <p>TOTAL</p>
+      <p><%= (@car.price * 9) %>€</p>
+    </div>
+</section>
+
+<section style="width: 100%; height: 40em;"
   data-controller="mapbox"
   data-mapbox-latitude-value="<%= @car.latitude %>"
   data-mapbox-longitude-value="<%= @car.longitude %>"
