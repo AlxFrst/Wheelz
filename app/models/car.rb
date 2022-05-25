@@ -23,6 +23,6 @@ class Car < ApplicationRecord
   end
 
   def article_params
-    params.require(:user).permit(:avatar)
+    params.require(:car).permit(photos: [])
   end
 end

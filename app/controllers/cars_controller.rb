@@ -43,6 +43,6 @@ class CarsController < ApplicationController
 
   def params_validate
     params.require(:car).permit(:brand, :model, :year, :horsepower,
-                                :kilometers, :plate, :energy, :seats, :smoker, :animals, :color, :description)
+                                :kilometers, :plate, :energy, :seats, :smoker, :animals, :color, :price, :description, photos: [])
   end
 end
