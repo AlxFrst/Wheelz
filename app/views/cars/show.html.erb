@@ -42,7 +42,8 @@
       quis repellat natus officia quos, nobis laboriosam aspernatur. Vel numquam aliquid, omnis ut quae quod!</p>
     </div>
     <div class="icons">
-      <i class="fa-solid fa-smoking"></i><i class="fa-solid fa-dog"></i><i class="fa-solid fa-gas-pump"></i>
+      <i class="fa-solid fa-smoking"></i><i class="fa-solid fa-dog"></i>
+      <i class="fa-solid fa-gas-pump"></i>
     </div>
   </div>
 
@@ -52,16 +53,21 @@
         <h2><%= @car.price %></h2><p>€ / jour</p>
       </div>
     </div>
-    <form action="/cars/1/bookings/new" method="get" class="row g-3 needs-validation" novalidat>
+    <% if current_user == nil %>
+      <% session[:previous_url] = '/cars/1/bookings/new' %>
+      <form action="/users/sign_in" method="get" class="row g-3 needs-validation" novalidat>
+    <% else %>
+      <form action="/cars/1/bookings/new" method="get" class="row g-3 needs-validation" novalidat>
+    <% end %>
       <div class="calkilo">
         <div class="calendar">
           <div class="col-md-6 start-date">
-            <label for="start-date" class="form-label">ARRIVEE</label>
-            <input type="date" class="form-control" id="start-date" name="start_date" value="start-date" required>
+            <label for="start-date" class="form-label">DEPART</label>
+            <input type="date" class="form-control" id="start-date" name="start_date" value="start-date" min=<%= Time.now.strftime("%Y-%m-%d") %> required>
           </div>
           <div class="col-md-6 end-date">
-            <label for="end-date" class="form-label">DEPART</label>
-            <input type="date" class="form-control" id="end-date" name="end_date" value="end-date" required>
+            <label for="end-date" class="form-label">ARRIVEE</label>
+            <input type="date" class="form-control" id="end-date" name="end_date" value="end-date" min=<%= Time.now.strftime("%Y-%m-%d") %> required>
           </div>
         </div>
         <div class="col-12">
@@ -70,7 +76,7 @@
         </div>
       </div>
       <div class="d-grid gap-2">
-        <button class="btn btn-danger" type="submit">Test</button>
+        <button class="btn btn-danger" type="submit">Reserver</button>
       </div>
     <p class='add-comment'>Ajouter un commentaire</p>
     <input type="text" class='comment' name="comment">
