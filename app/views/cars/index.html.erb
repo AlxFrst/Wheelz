@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 d-flex justify-content-between">
-      <h3 class="car-counter">Cars (<%= @cars.count %>)</h3>
+      <h3 class="car-counter">Voitures (<%= @cars.count %>)</h3>
     </div>
   </div>
 </div>
@@ -25,11 +25,15 @@
           <div class="spec d-flex justify-content-between m-3">
             <p><%= car.horsepower %>hp</p>
             <p><%= car.energy %></p>
-            <p><%= car.seats %> seats</p>
+            <% if car.seats > 1 %>
+              <p><%= car.seats %> places</p>
+            <% else %>
+              <p><%= car.seats %> place</p>
+            <% end %>
           </div>
           <div class="price d-flex justify-content-between">
-            <h4><%= car.price%>€/<span class="days"> days</span></h4>
-            <%= link_to 'see more', car_path(car)%>
+            <h4><%= car.price%>€/<span class="days"> jours</span></h4>
+            <%= link_to 'Voir plus', car_path(car)%>
           </div>
         </div>
       </div>
