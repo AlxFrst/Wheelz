@@ -13,10 +13,15 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js"></script>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
-    <main class="container my-3">
+    <% if controller.controller_name != 'profiles' %>
+      <%= render 'shared/navbar' %>
+      <main class="container my-3">
+        <%= controller.controller_name %>
+        <%= yield %>
+      </main>
+      <%= render 'shared/footer' %>
+    <% else %>
       <%= yield %>
-    </main>
-    <%= render 'shared/footer' %>
+    <% end %>
   </body>
 </html>
