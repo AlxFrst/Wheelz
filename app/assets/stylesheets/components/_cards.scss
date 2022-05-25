@@ -1,19 +1,12 @@
-.card-body img {
-  width: 100%;
-  height: 300px;
-  border-radius: 1.1em 1.1em 0 0;
-}
+
 
 .card {
   color: grey;
+  border-radius: 1em;
   .days {
     opacity: 0.5;
     font-weight: 0.2em;
   }
-}
-
-.card img {
-  border-radius: 1.1em 1.1em 0 0;
 }
 
 .card-header {
@@ -25,4 +18,10 @@
 
 .card a {
   color: black;
+}
+
+#car-img{
+  width: 100%;
+  height: 270px;
+  border-radius: 12px 12px 0 0;
 }
