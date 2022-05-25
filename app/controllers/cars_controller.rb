@@ -1,6 +1,10 @@
 class CarsController < ApplicationController
   def index
-    @cars = Car.all
+    if params[:query].present?
+      @cars = Car.where("brand ILIKE ?", "%#{params[:query]}%") && Car.where("model ILIKE ?", "%#{params[:query]}%")
+    else
+      @cars = Car.all
+    end
   end
 
   def show
@@ -42,6 +46,6 @@ class CarsController < ApplicationController
 
   def params_validate
     params.require(:car).permit(:brand, :model, :year, :horsepower,
-      :kilometers, :plate, :energy, :seats, :smoker, :animals, :color, :description)
+                                :kilometers, :plate, :energy, :seats, :smoker, :animals, :color, :description)
   end
 end
