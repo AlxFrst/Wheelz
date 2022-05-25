@@ -6,17 +6,27 @@
 <div class="container mt-3">
   <h3>Complete this form to add your car</h3>
   <div class="container-form mt-5">
-    <%= simple_form_for(@car) do |f| %>
-      <div class="d-flex justify-content-between">
-        <div>
-          <%= f.input :brand, :placeholder => 'Ferrari' %>
-          <%= f.input :model, :placeholder => 'Italia' %>
-          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-          <%= f.input :horsepower, :placeholder => '700hp' %>
-          <%= f.input :year, :placeholder => '2021' %>
-          <%= f.input :kilometers, :placeholder => '25 000km' %>
-          <%= f.input :plate, :placeholder => 'AA - 123 - AA' %>
-          <%= f.input :energy, :placeholder => 'Fuel' %>
+      <%= simple_form_for(@car) do |f| %>
+        <div class="d-flex justify-content-between">
+          <div>
+            <%= f.input :brand, :placeholder => 'Ferrari' %>
+            <%= f.input :model, :placeholder => 'Italia' %>
+            <%= f.input :horsepower, :placeholder => '700hp' %>
+            <%= f.input :year, :placeholder => '2021' %>
+            <%= f.input :kilometers, :placeholder => '25 000km' %>
+            <%= f.input :plate, :placeholder => 'AA - 123 - AA' %>
+            <%= f.input :energy, :placeholder => 'Fuel' %>
+          </div>
+          <div>
+            <%= f.input :seats, :placeholder => '2' %>
+            <%= f.input :smoker %>
+            <%= f.input :animals %>
+            <%= f.input :color, :placeholder => 'Red' %>
+            <%= f.input :status %>
+            <%= f.input :description, as: :text %>
+            <%= f.input :price, :label => 'Price per day', :placeholder => '1000€/day' %>
+            <%= f.submit "Add your car", class:"btn btn-primary btn-form" %>
+          </div>
         </div>
         <div>
           <%= f.input :seats, :placeholder => '2' %>
