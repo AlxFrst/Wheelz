@@ -11,6 +11,7 @@
         <div>
           <%= f.input :brand, :placeholder => 'Ferrari' %>
           <%= f.input :model, :placeholder => 'Italia' %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           <%= f.input :horsepower, :placeholder => '700hp' %>
           <%= f.input :year, :placeholder => '2021' %>
           <%= f.input :kilometers, :placeholder => '25 000km' %>

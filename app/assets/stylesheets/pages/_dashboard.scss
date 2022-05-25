@@ -12,6 +12,7 @@
     }
   }
 
+
   .header {
     h3{
       color: #252733;
@@ -102,4 +103,10 @@ div.d-flex.justify-content-evenly > div:nth-child(1) > ul > li{
     padding: 20px;
     margin-top: 20px;
   }
+}
+
+body > div.dashboard > div > div.col-9.dashboard-content > div.container.body-content.dashboard-body.my-3 > div.d-flex.justify-content-evenly > div.profil > div > img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
 }
