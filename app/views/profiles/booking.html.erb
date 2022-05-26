@@ -1,0 +1,151 @@
+<div class="dashboard">
+  <div class="row">
+    <div class="col-3 sidebar">
+      <%= link_to root_path, class: "navbar-brand mt-5" do %>
+      <h1>Wheelz</h1>
+    <% end %>
+        <p><%= link_to "Profil", dashboard_path %></p>
+        <hr>
+        <p><%= link_to "My cars", dashboard_my_car_path %></p>
+        <hr>
+        <p><%= link_to "Bookings", dashboard_booking_path, class: "active"  %></p>
+    </div>
+    <div class="col-9 dashboard-content">
+      <div class="container header d-flex justify-content-between my-3">
+        <h3>Dashboard</h3>
+        <div class="avatar-menu d-flex">
+          <p><%= current_user.first_name %> <%= current_user.last_name %></p>
+          <ul class="user-profil">
+            <li class="nav-item dropdown">
+              <% if current_user.avatar.key.nil? %>
+                <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgsaRe2zqH_BBicvUorUseeTaE4kxPL2FmOQ&usqp=CAU", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% else %>
+                <%= cl_image_tag current_user.avatar.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <% end %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "Home", root_path, class: "dropdown-item" %>
+                <%= link_to "Disconnect", destroy_user_session_path, method:'delete', class: "dropdown-item" %>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+        <div class="container body-content dashboard-body my-3">
+          <div class="d-flex justify-content-between">
+            <div><h4>Réservation pour mes voitures</h4></div>
+          </div>
+          <table class="table mt-3">
+            <thead>
+              <tr>
+                <th scope="col">Détails de la réservation</th>
+                <th scope="col">Nom du client</th>
+                <th scope="col">Date de début</th>
+                <th scope="col">Date de fin</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Booking for Ferrari Italia</td>
+                <td>Tom cruise</td>
+                <td>22/04/2022</td>
+                <td>26/04/2022</td>
+                <td>
+                  <%= link_to "#" do %>
+                    <i class="fas fa-check iframe-green"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to "#" do %>
+                    <i class="fas fa-ban iframe-red"></i>
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <td>Booking for Ferrari Italia</td>
+                <td>Tom cruise</td>
+                <td>22/04/2022</td>
+                <td>26/04/2022</td>
+                <td>
+                  <%= link_to "#" do %>
+                    <i class="fas fa-check iframe-green"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to "#" do %>
+                    <i class="fas fa-ban iframe-red"></i>
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <td>Booking for Ferrari Italia</td>
+                <td>Tom cruise</td>
+                <td>22/04/2022</td>
+                <td>26/04/2022</td>
+                <td>
+                  <%= link_to "#" do %>
+                    <i class="fas fa-check iframe-green"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to "#" do %>
+                    <i class="fas fa-ban iframe-red"></i>
+                  <% end %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="container body-content dashboard-body my-3">
+          <div class="d-flex justify-content-between">
+            <div><h4>Mes réservations</h4></div>
+          </div>
+          <table class="table mt-3">
+            <thead>
+              <tr>
+                <th scope="col">Détails de la réservation</th>
+                <th scope="col">Nom du client</th>
+                <th scope="col">Date de début</th>
+                <th scope="col">Date de fin</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Booking for Ferrari Italia</td>
+                <td>Tom cruise</td>
+                <td>22/04/2022</td>
+                <td>26/04/2022</td>
+                <td>
+                  <%= link_to "#" do %>
+                    <i class="fas fa-trash iframe-red"></i>
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <td>Booking for Ferrari Italia</td>
+                <td>Tom cruise</td>
+                <td>22/04/2022</td>
+                <td>26/04/2022</td>
+                <td>
+                  <%= link_to "#" do %>
+                    <i class="fas fa-trash iframe-red"></i>
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <td>Booking for Ferrari Italia</td>
+                <td>Tom cruise</td>
+                <td>22/04/2022</td>
+                <td>26/04/2022</td>
+                <td>
+                  <%= link_to "#" do %>
+                    <i class="fas fa-trash iframe-red"></i>
+                  <% end %>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
