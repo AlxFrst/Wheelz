@@ -47,12 +47,12 @@
           </thead>
           <tbody>
             <% @my_cars_bookings.each do |booking| %>
-              <% if booking.status == 'pending_payment' %>              
+              <% if booking.status == 'pending_payment' %>
                 <tr>
                   <td><%= booking.car.brand %> <%= booking.car.model%></td>
                   <td><%= booking.user.first_name %> <%= booking.user.last_name %></td>
-                  <td>22/04/2022</td>
-                  <td>26/04/2022</td>
+                  <td><%= booking.start_date %></td>
+                  <td><%= booking.end_date %></td>
                   <td>
                     <%= link_to accept_request_path(booking), method: 'post' do %>
                       <i class="fas fa-check iframe-green"></i>
@@ -90,8 +90,8 @@
               <tr>
                 <td><%= booking.car.brand %> <%= booking.car.model%></td>
                 <td><%= booking.user.first_name %> <%= booking.user.last_name %></td>
-                <td>22/04/2022</td>
-                <td>26/04/2022</td>
+                <td><%= booking.start_date %></td>
+                <td><%= booking.end_date %></td>
                 <% if booking.status == "pending_payment" %>
                   <td>
                     <p>En attente paiement</p>
