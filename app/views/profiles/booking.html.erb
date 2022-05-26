@@ -2,13 +2,13 @@
   <div class="row">
     <div class="col-3 sidebar">
       <%= link_to root_path, class: "navbar-brand mt-5" do %>
-      <h1>Wheelz</h1>
-    <% end %>
-        <p><%= link_to "Profil", dashboard_path %></p>
-        <hr>
-        <p><%= link_to "My cars", dashboard_my_car_path %></p>
-        <hr>
-        <p><%= link_to "Bookings", dashboard_booking_path, class: "active"  %></p>
+        <h1>Wheelz</h1>
+      <% end %>
+      <p><%= link_to "Profil", dashboard_path %></p>
+      <hr>
+      <p><%= link_to "My cars", dashboard_my_car_path %></p>
+      <hr>
+      <p><%= link_to "Bookings", dashboard_booking_path, class: "active"  %></p>
     </div>
     <div class="col-9 dashboard-content">
       <div class="container header d-flex justify-content-between my-3">
@@ -30,122 +30,81 @@
           </ul>
         </div>
       </div>
-        <div class="container body-content dashboard-body my-3">
-          <div class="d-flex justify-content-between">
-            <div><h4>Réservation pour mes voitures</h4></div>
+      <div class="container body-content dashboard-body my-3">
+        <div class="d-flex justify-content-between">
+          <div>
+            <h4>Réservation pour mes voitures</h4>
           </div>
-          <table class="table mt-3">
-            <thead>
-              <tr>
-                <th scope="col">Détails de la réservation</th>
-                <th scope="col">Nom du client</th>
-                <th scope="col">Date de début</th>
-                <th scope="col">Date de fin</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Booking for Ferrari Italia</td>
-                <td>Tom cruise</td>
-                <td>22/04/2022</td>
-                <td>26/04/2022</td>
-                <td>
-                  <%= link_to "#" do %>
-                    <i class="fas fa-check iframe-green"></i>
-                  <% end %>
-                </td>
-                <td>
-                  <%= link_to "#" do %>
-                    <i class="fas fa-ban iframe-red"></i>
-                  <% end %>
-                </td>
-              </tr>
-              <tr>
-                <td>Booking for Ferrari Italia</td>
-                <td>Tom cruise</td>
-                <td>22/04/2022</td>
-                <td>26/04/2022</td>
-                <td>
-                  <%= link_to "#" do %>
-                    <i class="fas fa-check iframe-green"></i>
-                  <% end %>
-                </td>
-                <td>
-                  <%= link_to "#" do %>
-                    <i class="fas fa-ban iframe-red"></i>
-                  <% end %>
-                </td>
-              </tr>
-              <tr>
-                <td>Booking for Ferrari Italia</td>
-                <td>Tom cruise</td>
-                <td>22/04/2022</td>
-                <td>26/04/2022</td>
-                <td>
-                  <%= link_to "#" do %>
-                    <i class="fas fa-check iframe-green"></i>
-                  <% end %>
-                </td>
-                <td>
-                  <%= link_to "#" do %>
-                    <i class="fas fa-ban iframe-red"></i>
-                  <% end %>
-                </td>
-              </tr>
-            </tbody>
-          </table>
         </div>
-        <div class="container body-content dashboard-body my-3">
-          <div class="d-flex justify-content-between">
-            <div><h4>Mes réservations</h4></div>
+        <table class="table mt-3">
+          <thead>
+            <tr>
+              <th scope="col">Détails de la réservation</th>
+              <th scope="col">Nom du client</th>
+              <th scope="col">Date de début</th>
+              <th scope="col">Date de fin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @my_cars_bookings.each do |booking| %>
+              <tr>
+                <td><%= booking.car.brand %> <%= booking.car.model%></td>
+                <td><%= booking.user.first_name %> <%= booking.user.last_name %></td>
+                <td>22/04/2022</td>
+                <td>26/04/2022</td>
+                <td>
+                  <%= link_to "#" do %>
+                    <i class="fas fa-check iframe-green"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to "#" do %>
+                    <i class="fas fa-ban iframe-red"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="container body-content dashboard-body my-3">
+        <div class="d-flex justify-content-between">
+          <div>
+            <h4>Mes réservations</h4>
           </div>
-          <table class="table mt-3">
-            <thead>
-              <tr>
-                <th scope="col">Détails de la réservation</th>
-                <th scope="col">Nom du client</th>
-                <th scope="col">Date de début</th>
-                <th scope="col">Date de fin</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Booking for Ferrari Italia</td>
-                <td>Tom cruise</td>
-                <td>22/04/2022</td>
-                <td>26/04/2022</td>
-                <td>
-                  <%= link_to "#" do %>
-                    <i class="fas fa-trash iframe-red"></i>
-                  <% end %>
-                </td>
-              </tr>
-              <tr>
-                <td>Booking for Ferrari Italia</td>
-                <td>Tom cruise</td>
-                <td>22/04/2022</td>
-                <td>26/04/2022</td>
-                <td>
-                  <%= link_to "#" do %>
-                    <i class="fas fa-trash iframe-red"></i>
-                  <% end %>
-                </td>
-              </tr>
-              <tr>
-                <td>Booking for Ferrari Italia</td>
-                <td>Tom cruise</td>
-                <td>22/04/2022</td>
-                <td>26/04/2022</td>
-                <td>
-                  <%= link_to "#" do %>
-                    <i class="fas fa-trash iframe-red"></i>
-                  <% end %>
-                </td>
-              </tr>
-            </tbody>
-          </table>
         </div>
+        <table class="table mt-3">
+          <thead>
+            <tr>
+              <th scope="col">Détails de la réservation</th>
+              <th scope="col">Nom du client</th>
+              <th scope="col">Date de début</th>
+              <th scope="col">Date de fin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @my_bookings.each do |booking| %>
+              <tr>
+                <td><%= booking.car.brand %> <%= booking.car.model%></td>
+                <td><%= booking.user.first_name %> <%= booking.user.last_name %></td>
+                <td>22/04/2022</td>
+                <td>26/04/2022</td>
+                <td>
+                  <%= link_to "#" do %>
+                    <i class="fas fa-check iframe-green"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to "#" do %>
+                    <i class="fas fa-ban iframe-red"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
+</div>
 </div>
