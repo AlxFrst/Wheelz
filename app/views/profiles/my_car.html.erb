@@ -36,7 +36,7 @@
             <h4>Mes voiture(s)</h4>
           </div>
           <div>
-            <p><%= link_to "Ajouter une voiture",  new_car_path, class: "button-dashboard-car" %></p>
+            <p><%= link_to "Voiture +",  new_car_path, class: "button-dashboard-car" %></p>
           </div>
         </div>
         <table class="table">
@@ -59,7 +59,7 @@
                   <% end %>
                 </td>
                 <td>
-                  <%= link_to car_path(car), :method => 'delete' do %>
+                  <%= link_to car_path(car), :method => 'delete', class: "iframe-red" do %>
                     <i class="fas fa-trash"></i>
                   <% end %>
                 </td>

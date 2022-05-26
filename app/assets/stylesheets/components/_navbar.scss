@@ -31,7 +31,9 @@
     }
   }
 }
-
+div.navbar.navbar-expand-sm.navbar-light.navbar-lewagon > div > ul > p{
+  margin-right: 20px;
+}
 #search_query {
   background-color: white;
 }
@@ -48,7 +50,7 @@
   width: 30%;
 
   #search_query {
-    border-radius: 2em;
+    border-radius: 2.5em;
   }
 
   .search-logo {
@@ -64,6 +66,10 @@
   .search-form-control {
     position: relative;
   }
+  #search_query{
+   padding-left: 30px;
+  }
+
 
   .search-form-control .btn {
     position: absolute;
