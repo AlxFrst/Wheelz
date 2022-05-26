@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2022_05_26_090106) do
 
   create_table "bookings", force: :cascade do |t|
     t.string "comment"
-    t.string "status", default: "created"
+    t.string "status", default: "pending_payment"
     t.date "start_date"
     t.date "end_date"
     t.bigint "car_id", null: false
