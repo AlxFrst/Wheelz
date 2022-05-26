@@ -47,39 +47,38 @@
       </div>
     </div>
     <% if current_user == nil %>
-      <% session[:previous_url] = '/cars/1/bookings/new' %>
+      <% session[:previous_url] = "/cars/#{@car.id}/bookings/new" %>
       <form action="/users/sign_in" method="get" class="row g-3 needs-validation" novalidat>
-    <% else %>
-      <form action="/cars/1/bookings/new" method="get" class="row g-3 needs-validation" novalidat>
-    <% end %>
-      <div class="calkilo">
-        <div class="col-12 calendar">
-          <label for="calendar" class="form-label">Durée</label>
-          <input type="date" class="form-control" id="calendar" name="calendar" required>
+      <% else %>
+        <form action=<%= "/cars/#{@car.id}/bookings/new" %> method="get" class="row g-3 needs-validation" novalidat>
+        <% end %>
+        <div class="calkilo">
+          <div class="col-12 calendar">
+            <label for="calendar" class="form-label">Durée</label>
+            <input type="date" class="form-control" id="calendar" name="calendar" required>
+          </div>
+          <div class="col-12">
+            <label for="kilometers" class="form-label">Nombre de kilometres</label>
+            <input type="number" class="form-control" id="kilometers" value='200' name="kilometers" step=100 min=200 max=5000 required>
+          </div>
         </div>
-        <div class="col-12">
-          <label for="kilometers" class="form-label">Nombre de kilometres</label>
-          <input type="number" class="form-control" id="kilometers" value='200' name="kilometers" step=100 min=200 max=5000 required>
+        <div class="d-grid gap-2">
+          <button class="btn btn-danger" type="submit">Reserver</button>
         </div>
+        <p class='add-comment'>Ajouter un commentaire</p>
+        <input type="text" class='comment' name="comment">
+        <p class='legal'>Le prix total de la location peut varier en fonction du nombre de kilomètres réalisés</p>
+      </form>
+      <div class="calcul">
+        <p><%= @car.price %></p>
+        <p>0€</p>
       </div>
-      <div class="d-grid gap-2">
-        <button class="btn btn-danger" type="submit">Reserver</button>
+      <div class="total">
+        <p>TOTAL</p>
+        <p>0€</p>
       </div>
-    <p class='add-comment'>Ajouter un commentaire</p>
-    <input type="text" class='comment' name="comment">
-    <p class='legal'>Le prix total de la location peut varier en fonction du nombre de kilomètres réalisés</p>
-    </form>
-    <div class="calcul">
-      <p><%= @car.price %></p>
-      <p>0€</p>
-    </div>
-    <div class="total">
-      <p>TOTAL</p>
-      <p>0€</p>
-    </div>
-</section>
-
-<section style="width: 100%; height: 40em;"
+    </section>
+    <section style="width: 100%; height: 40em;"
   data-controller="mapbox"
   data-mapbox-latitude-value="<%= @car.latitude %>"
   data-mapbox-longitude-value="<%= @car.longitude %>"

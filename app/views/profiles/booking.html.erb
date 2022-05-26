@@ -90,13 +90,8 @@
                 <td>22/04/2022</td>
                 <td>26/04/2022</td>
                 <td>
-                  <%= link_to "#" do %>
-                    <i class="fas fa-check iframe-green"></i>
-                  <% end %>
-                </td>
-                <td>
-                  <%= link_to "#" do %>
-                    <i class="fas fa-ban iframe-red"></i>
+                  <%= link_to destroy_booking_path(booking), method: 'delete' do %>
+                    <i class="fas fa-solid fa-trash iframe-red"></i>
                   <% end %>
                 </td>
               </tr>
