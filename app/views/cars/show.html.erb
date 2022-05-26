@@ -56,19 +56,13 @@
       <form action="/cars/1/bookings/new" method="get" class="row g-3 needs-validation" novalidat>
     <% end %>
       <div class="calkilo">
-        <div class="calendar">
-          <div class="col-md-6 start-date">
-            <label for="start-date" class="form-label">DEPART</label>
-            <input type="date" class="form-control" id="start-date" name="start_date" value="start-date" min=<%= Time.now.strftime("%Y-%m-%d") %> required>
-          </div>
-          <div class="col-md-6 end-date">
-            <label for="end-date" class="form-label">ARRIVEE</label>
-            <input type="date" class="form-control" id="end-date" name="end_date" value="end-date" min=<%= Time.now.strftime("%Y-%m-%d") %> required>
-          </div>
+        <div class="col-12 calendar">
+          <label for="calendar" class="form-label">Durée</label>
+          <input type="date" class="form-control" id="calendar" name="calendar" required>
         </div>
         <div class="col-12">
           <label for="kilometers" class="form-label">Nombre de kilometres</label>
-          <input type="number" class="form-control" id="kilometers" name="kilometers" step=100 min=200 max=5000 value="kilometers" required>
+          <input type="number" class="form-control" id="kilometers" value='200' name="kilometers" step=100 min=200 max=5000 required>
         </div>
       </div>
       <div class="d-grid gap-2">
@@ -79,12 +73,12 @@
     <p class='legal'>Le prix total de la location peut varier en fonction du nombre de kilomètres réalisés</p>
     </form>
     <div class="calcul">
-      <p><%= @car.price %> x 9 jours</p>
-      <p><%= (@car.price * 9) %>€</p>
+      <p><%= @car.price %></p>
+      <p>0€</p>
     </div>
     <div class="total">
       <p>TOTAL</p>
-      <p><%= (@car.price * 9) %>€</p>
+      <p>0€</p>
     </div>
 </section>
 

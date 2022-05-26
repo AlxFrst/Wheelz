@@ -19,6 +19,6 @@ class Car < ApplicationRecord
   private
 
   def address
-    "#{self.user.street}, #{self.user.city}"
+    "#{user.street}, #{user.city}"
   end
 end
