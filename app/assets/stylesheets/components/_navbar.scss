@@ -20,14 +20,19 @@
       margin: 15px;
     }
   }
-  .user-profil{
+  .user-profil {
     color: white;
     cursor: pointer;
+    p {
+      color: black;
+      margin-bottom: 0;
+      margin-right: 10px;
+      align-self: center;
+    }
   }
-
 }
 
-#search_query{
+#search_query {
   background-color: white;
 }
 
