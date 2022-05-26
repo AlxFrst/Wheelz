@@ -14,6 +14,8 @@ class User < ApplicationRecord
   validates :city, presence: true
   validates :country, presence: true
   validates :license, presence: true
+  validates :street, presence: true
+  validates :postal_code, presence: true
 
   private
 

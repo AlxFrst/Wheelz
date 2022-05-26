@@ -1,53 +1,49 @@
 <h1>
   <%= @car.brand %> - <%= @car.model %>
 </h1>
-
 <div class="upper-image">
   <a href="#"><%= @car.user.city %></a>
   <div>
     <a href="#"><i class="fa-solid fa-heart"></i></i>Partager</a>
-    <a href="#"><i class="fa-solid fa-share-from-square"></i>Enregistrer</a>
-  </div>
+  <a href="#"><i class="fa-solid fa-share-from-square"></i>Enregistrer</a>
+</div>
 </div>
 <div id="carSlider" class="carousel slide" data-bs-ride="true">
   <div class="carousel-inner">
-   <div class="carousel-item active"
-    style='background-image:url("https://cdn.classic-trader.com/I/images/1920_1920_inset/vehicle_ad_standard_image_a76ca661a7148372cb215f178ce498cb.jpg")'>
-    </div>
-    <div class="carousel-item"
-    style='background-image:url("https://images.cadar.io/1f97fb1d-6d44-48f6-a940-0a974ae29f34/full.jpg")'>
-    </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carSlider" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carSlider" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-
-<section class="back">
-  <div class="left-side">
-    <div class="under-image">
-      <h2><%= @car.user.city %>, <%= @car.user.street %>:</h2>
-      <h3><%= @car.brand %> <%= @car.model %></h3>
-      <p><%= @car.seats %> sièges - <%= @car.energy.capitalize %> - <%= @car.year %> - <%= @car.horsepower %> hp</p>
-    </div>
-    <div class="describe">
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure consequuntur magni maxime dolore numquam ut,
-      quis repellat natus officia quos, nobis laboriosam aspernatur. Vel numquam aliquid, omnis ut quae quod!
-      <br><br>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure consequuntur magni maxime dolore numquam ut,
-      quis repellat natus officia quos, nobis laboriosam aspernatur. Vel numquam aliquid, omnis ut quae quod!</p>
-    </div>
-    <div class="icons">
-      <i class="fa-solid fa-smoking"></i><i class="fa-solid fa-dog"></i>
-      <i class="fa-solid fa-gas-pump"></i>
-    </div>
+    <% @car.photos.each do |photo| %>
+      <div class="carousel-item <% if @car.photos.first == photo %> active <% end %>"
+      style='background-image:url("<%= cl_image_path photo.key%>"); height: 30em;'>
+      </div>
+    <% end %>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carSlider" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carSlider" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-
-  <div class="card-price">
+  <section class="back">
+    <div class="left-side">
+      <div class="under-image">
+        <h2><%= @car.user.city %>, <%= @car.user.street %>:</h2>
+        <h3><%= @car.brand %> <%= @car.model %></h3>
+        <p><%= @car.seats %> sièges - <%= @car.energy.capitalize %> - <%= @car.year %> - <%= @car.horsepower %> hp</p>
+      </div>
+      <div class="describe">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure consequuntur magni maxime dolore numquam ut,
+          quis repellat natus officia quos, nobis laboriosam aspernatur. Vel numquam aliquid, omnis ut quae quod!
+          <br>
+          <br>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure consequuntur magni maxime dolore numquam ut,
+          quis repellat natus officia quos, nobis laboriosam aspernatur. Vel numquam aliquid, omnis ut quae quod!</p>
+      </div>
+      <div class="icons">
+        <i class="fa-solid fa-smoking"></i><i class="fa-solid fa-dog"></i><i class="fa-solid fa-gas-pump"></i>
+      </div>
+    </div>
+    <div class="card-price">
     <div class="top-card">
       <div class="card-top-price">
         <h2><%= @car.price %></h2><p>€ / jour</p>
