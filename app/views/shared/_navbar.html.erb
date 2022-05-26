@@ -16,7 +16,8 @@
       <% end %>
     </div>
     <%if user_signed_in? %>
-      <ul class="user-profil">
+      <ul class="user-profil d-flex">
+        <p><%= current_user.username %></p>
         <li class="nav-item dropdown">
           <% if current_user.avatar.key.nil? %>
             <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgsaRe2zqH_BBicvUorUseeTaE4kxPL2FmOQ&usqp=CAU", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
