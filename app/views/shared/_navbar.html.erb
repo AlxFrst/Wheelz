@@ -7,7 +7,7 @@
       <%= simple_form_for :search, url: root_path, method: :get do |f| %>
         <div class="search-form-control form-group">
           <%= form_tag cars_path, method: :get do %>
-            <%= text_field_tag :query, params[:query], class: "form-control", id: "search_query", placeholder: "Recherche"%>
+            <%= text_field_tag :query, params[:query], class: "form-control search-placeholder", id: "search_query", placeholder: "Search"%>
           <% end %>
           <button type="submit" class="btn btn-flat search-logo">
             <i class="fas fa-search"></i>
@@ -34,7 +34,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="nav-buttons d-flex justify-content-between">
           <%= link_to "Sign up", new_user_registration_path, class: "nav-link signup" %>
-          <%= link_to "Login", user_session_path, class: "nav-link login" %>
+          <%= link_to "Log in", user_session_path, class: "nav-link login" %>
         </div>
       </div>
     <% end %>

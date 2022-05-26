@@ -2,10 +2,11 @@
 
 .card {
   color: grey;
-  border-radius: 1em;
+  border-radius: 16px;
   .days {
     opacity: 0.5;
     font-weight: 0.2em;
+    color: #667080;
   }
 }
 
@@ -14,8 +15,26 @@
   border: none;
   margin: 0;
   padding: 0;
-}
 
+  h3{
+    color: #667080;
+  }
+}
+.card-text{
+  p{
+    color: #6E798C;
+  }
+}
+.spec{
+  p{
+    color: #A5ADBB;
+  }
+}
+.price{
+  h4{
+    color: #667080;
+  }
+}
 .card a {
   color: black;
 }
