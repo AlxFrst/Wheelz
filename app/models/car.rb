@@ -19,6 +19,6 @@ class Car < ApplicationRecord
   private
 
   def address
-    "4 avenue des saules, Lille"
+    "#{self.user.street}, #{self.user.city}"
   end
 end
