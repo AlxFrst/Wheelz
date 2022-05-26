@@ -6,13 +6,13 @@
     <% end %>
         <p><%= link_to "Profil", dashboard_path %></p>
         <hr>
-        <p><%= link_to "My cars", dashboard_my_car_path %></p>
+        <p><%= link_to "My cars", dashboard_my_car_path, class: "active"  %></p>
         <hr>
         <p><%= link_to "Bookings", dashboard_booking_path %></p>
     </div>
     <div class="col-9 dashboard-content">
       <div class="container header d-flex justify-content-between my-3">
-        <h3>Profil</h3>
+        <h3>Dashboard</h3>
         <div class="avatar-menu d-flex">
           <p><%= current_user.first_name %> <%= current_user.last_name %></p>
           <ul class="user-profil">
@@ -32,15 +32,15 @@
       </div>
         <div class="container body-content dashboard-body my-3">
           <div class="d-flex justify-content-between">
-            <div><h4>My car(s)</h4></div>
-            <div><p><%= link_to "Add a car",  new_car_path, class: "button-dashboard-car" %></p></div>
+            <div><h4>Mes voiture(s)</h4></div>
+            <div><p><%= link_to "Ajouter une voiture",  new_car_path, class: "button-dashboard-car" %></p></div>
           </div>
           <table class="table">
             <thead>
               <tr>
-                <th scope="col">Car details</th>
+                <th scope="col">Infos voiture</th>
                 <th scope="col">Date</th>
-                <th scope="col">Disponibility</th>
+                <th scope="col">Disponibilité</th>
               </tr>
             </thead>
             <tbody>
@@ -48,7 +48,16 @@
                 <td>Ferrari Italia</td>
                 <td>22/05/2022</td>
                 <td>Available</td>
-                <td><i class="fas fa-ellipsis-v"></i></td>
+                <td>
+                  <%= link_to "#" do %>
+                    <i class="fas fa-edit"></i>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to "#" do %>
+                    <i class="fas fa-trash"></i>
+                  <% end %>
+                </td>
               </tr>
             </tbody>
           </table>

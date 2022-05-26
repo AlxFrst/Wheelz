@@ -32,21 +32,18 @@
         <p><%= @car.seats %> sièges - <%= @car.energy.capitalize %> - <%= @car.year %> - <%= @car.horsepower %> hp</p>
       </div>
       <div class="describe">
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure consequuntur magni maxime dolore numquam ut,
-          quis repellat natus officia quos, nobis laboriosam aspernatur. Vel numquam aliquid, omnis ut quae quod!
-          <br>
-          <br>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure consequuntur magni maxime dolore numquam ut,
-          quis repellat natus officia quos, nobis laboriosam aspernatur. Vel numquam aliquid, omnis ut quae quod!</p>
+        <p><%= @car.description %></p>
       </div>
       <div class="icons">
         <i class="fa-solid fa-smoking"></i><i class="fa-solid fa-dog"></i><i class="fa-solid fa-gas-pump"></i>
       </div>
     </div>
     <div class="card-price">
-    <div class="top-card">
-      <div class="card-top-price">
-        <h2><%= @car.price %></h2><p>€ / jour</p>
+      <div class="top-card">
+        <div class="card-top-price">
+          <h2><%= @car.price %></h2>
+          <p>€ / jour</p>
+        </div>
       </div>
     </div>
     <% if current_user == nil %>
