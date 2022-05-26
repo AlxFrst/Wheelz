@@ -25,8 +25,10 @@ const priceDynamic = () => {
 }
 
 const initFlatpickr = () => {
+  const unavailable = document.querySelector('#unavailable').innerText
   flatpickr("#calendar", {
     mode: "range",
+    disable: JSON.parse(unavailable),
     minDate: new Date()
   });
   document.querySelector('#calendar').addEventListener('change', () => {

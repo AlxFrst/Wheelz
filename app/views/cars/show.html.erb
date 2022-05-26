@@ -20,6 +20,7 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+</div>
   <section class="back">
     <div class="left-side">
       <div class="under-image">
@@ -80,3 +81,5 @@
   data-mapbox-latitude-value="<%= @car.latitude %>"
   data-mapbox-longitude-value="<%= @car.longitude %>"
   data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></section>
+
+<span id='unavailable' style='display:none'><%= @unavailability.to_json %></span>

@@ -54,7 +54,7 @@
             <h5>Photo de profil</h5>
             <div class="mt-3 mb-3">
               <% if current_user.avatar.key.nil? %>
-                <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgsaRe2zqH_BBicvUorUseeTaE4kxPL2FmOQ&usqp=CAU", class:'profile-img'%>
+                <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgsaRe2zqH_BBicvUorUseeTaE4kxPL2FmOQ&usqp=CAU", class:"avatar-profil"%>
               <% else %>
                 <%= cl_image_tag current_user.avatar.key %>
               <% end %>
