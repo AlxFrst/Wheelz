@@ -9,6 +9,19 @@ class BookingsController < ApplicationController
   end
 
   def create
-    raise
+    @booking = Booking.new(booking_params)
+    @car = Car.find(params[:car_id])
+    @booking.car = @car
+    if @booking.save
+      redirect_to dashboard_booking_path
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date, :kilometers, :user_id, :comment)
   end
 end
