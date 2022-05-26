@@ -14,3 +14,9 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+
+import { initFlatpickr } from "../channels/calendar";
+
+document.addEventListener('turbolinks:load', () => {
+  initFlatpickr();
+})
