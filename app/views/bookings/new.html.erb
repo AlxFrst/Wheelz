@@ -26,7 +26,7 @@
       <div class="col-6 align-self-center text-center">
         <div class="review-card">
           <% if @car.photos.length > 0 %>
-            <%= cl_image_tag car.photos[0].key, class:'review-card-img', id: "review-car-img"%>
+            <%= cl_image_tag @car.photos[0].key, class:'review-card-img', id: "review-car-img"%>
           <% else %>
             <img src="https://cdn.motor1.com/images/mgl/nGzgl/s1/2021-bugatti-chiron-front.jpg" id="review-car-img" class="review-card-img">
           <% end %>
@@ -44,11 +44,11 @@
             </div>
             <div id="recap-price">
               <h4><%= @car.price%>€ / jours</span></h4>
-            </div>
           </div>
         </div>
-        <button type="button" class='btn btn-secondary'>Annuler</button>
-        <%= f.submit "Reserver maintenant", class: "my-3 btn btn-primary" %>
-      <% end %>
-    </div>
+      </div>
+      <button type="button" class='btn btn-secondary'>Annuler</button>
+      <%= f.submit "Reserver maintenant", class: "my-3 btn btn-primary" %>
+    <% end %>
   </div>
+</div>
