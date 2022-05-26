@@ -10,6 +10,10 @@ class CarsController < ApplicationController
 
   def show
     @car = Car.find(params[:id])
+    @unavailability = []
+    @car.bookings.each do |i|
+      @unavailability << { from: i.start_date.strftime("%Y-%m-%d"), to: i.end_date.strftime("%Y-%m-%d") }
+    end
   end
 
   def new
