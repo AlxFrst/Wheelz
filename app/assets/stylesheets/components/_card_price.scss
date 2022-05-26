@@ -3,7 +3,7 @@
   border-radius: 12px;
   padding: 24px;
   box-shadow: 0px 6px 16px rgb(194, 192, 192);
-  width: 40em;
+  width: 20em;
   margin: 2em;
 }
 
@@ -16,16 +16,22 @@
     text-decoration: none;
   }
 }
+.left-side{
+  width: 60%;
 
+  h2{
+    color: #667080;
+  }
+}
 .calkilo {
-  border: 0.07em solid $color-figma;
+  border: 0.07em solid rgba(102, 112, 128, 0.5);
   padding-bottom: 1em;
   border-radius: 4px;
   margin-top: 1em;
 }
 
 .col-md-6 {
-  border-bottom: 0.07em solid $color-figma;
+  border-bottom: 0.07em solid rgba(102, 112, 128, 0.5);
   padding-bottom: 1em;
   margin-top: 0px;
   input {
@@ -36,7 +42,7 @@
 }
 
 .col-md-6.start-date {
-  border-right: 00.07em solid $color-figma;
+  border-right: 00.07em solid rgba(102, 112, 128, 0.5);
   padding-left: 0.3em;
 }
 
@@ -45,27 +51,30 @@
 }
 
 .add-comment {
-  margin-top: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0em;
 }
 
 .comment {
   height: 5em;
   width: 100%;
   border-radius: 8px;
-  border: 0.07em solid $color-figma;
+  border: 0.07em solid rgba(102, 112, 128, 0.5);
 }
 
 .legal {
   font-size: small;
+  text-align: center;
 }
 
 .calcul {
   display: flex;
   justify-content: space-between;
-  border-bottom: 0.07em solid $color-figma;
+  border-bottom: 0.07em solid rgba(102, 112, 128, 0.5);
 }
 
 .total {
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }
