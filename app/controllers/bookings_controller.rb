@@ -2,9 +2,14 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @car = Car.find(params[:car_id])
+    if session[:params]["calendar"]
+      @start_date = session[:params]["calendar"].split[0]
+      @end_date = session[:params]["calendar"].split[2]
+    else
+      @start_date = params[:calendar].split[0]
+      @end_date = params[:calendar].split[2]
+    end
     @kilometers = params[:kilometers] || session[:params]["kilometers"].to_i
-    @start_date = params[:start_date] || session[:params]["start_date"]
-    @end_date = params[:end_date] || session[:params]["end_date"]
     @comment = params[:comment] || session[:params]["comment"]
   end
 

@@ -87,8 +87,7 @@ a {
 }
 
 .calendar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0 -8px;
+  .flatpickr-input {
+    background-color: white;
+  }
 }
