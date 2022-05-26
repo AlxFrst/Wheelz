@@ -16,7 +16,6 @@ User.create(email: "alex@alex.com", password: "azerty", first_name: Faker::Name.
             postal_code: Faker::Address.zip_code, phone: Faker::PhoneNumber.phone_number_with_country_code,
             license: true)
 
-<<<<<<< HEAD
 User.create(email: 'julien@julien.com', password: 'azerty', first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name, street: '4 avenue Foch', city: 'Paris',
   country: Faker::Address.country, username: Faker::Esport.player, birthday: Faker::Date.birthday(min_age: 18, max_age: 65),
@@ -28,19 +27,6 @@ User.create(email: 'olivier@olivier.com', password: 'azerty', first_name: Faker:
   country: Faker::Address.country, username: Faker::Esport.player, birthday: Faker::Date.birthday(min_age: 18, max_age: 65),
   postal_code: Faker::Address.zip_code, phone: Faker::PhoneNumber.phone_number_with_country_code,
   license: true)
-=======
-User.create(email: "julien@julien.com", password: "azerty", first_name: Faker::Name.first_name,
-            last_name: Faker::Name.last_name, street: Faker::Address.street_address, city: Faker::Address.city,
-            country: Faker::Address.country, username: Faker::Esport.player, birthday: Faker::Date.birthday(min_age: 18, max_age: 65),
-            postal_code: Faker::Address.zip_code, phone: Faker::PhoneNumber.phone_number_with_country_code,
-            license: true)
-
-User.create(email: "olivier@olivier.com", password: "azerty", first_name: Faker::Name.first_name,
-            last_name: Faker::Name.last_name, street: Faker::Address.street_address, city: Faker::Address.city,
-            country: Faker::Address.country, username: Faker::Esport.player, birthday: Faker::Date.birthday(min_age: 18, max_age: 65),
-            postal_code: Faker::Address.zip_code, phone: Faker::PhoneNumber.phone_number_with_country_code,
-            license: true)
->>>>>>> master
 
 20.times do
   User.create(email: Faker::Internet.email, password: "azerty", first_name: Faker::Name.first_name,
