@@ -59,7 +59,7 @@
                 <%= cl_image_tag current_user.avatar.key %>
               <% end %>
             </div>
-            <button type="button" class="btn button-dashboard">Modify your profil</button>
+            <%= link_to 'Modify profil', edit_user_registration_path(current_user) %>
           </div>
         </div>
       </div>
