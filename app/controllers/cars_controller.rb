@@ -1,7 +1,8 @@
 class CarsController < ApplicationController
   def index
     if params[:query].present?
-      @cars = Car.where("brand ILIKE ?", "%#{params[:query]}%") && Car.where("model ILIKE ?", "%#{params[:query]}%")
+      sql_query = "brand ILIKE :query OR model ILIKE :query"
+      @cars = Car.where(sql_query, query: "%#{params[:query]}%")
     else
       @cars = Car.all
     end
