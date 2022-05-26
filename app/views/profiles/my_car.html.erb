@@ -2,13 +2,13 @@
   <div class="row">
     <div class="col-3 sidebar">
       <%= link_to root_path, class: "navbar-brand mt-5" do %>
-      <h1>Wheelz</h1>
-    <% end %>
-        <p><%= link_to "Profil", dashboard_path %></p>
-        <hr>
-        <p><%= link_to "My cars", dashboard_my_car_path, class: "active"  %></p>
-        <hr>
-        <p><%= link_to "Bookings", dashboard_booking_path %></p>
+        <h1>Wheelz</h1>
+      <% end %>
+      <p><%= link_to "Profil", dashboard_path %></p>
+      <hr>
+      <p><%= link_to "My cars", dashboard_my_car_path, class: "active"  %></p>
+      <hr>
+      <p><%= link_to "Bookings", dashboard_booking_path %></p>
     </div>
     <div class="col-9 dashboard-content">
       <div class="container header d-flex justify-content-between my-3">
@@ -30,39 +30,45 @@
           </ul>
         </div>
       </div>
-        <div class="container body-content dashboard-body my-3">
-          <div class="d-flex justify-content-between">
-            <div><h4>Mes voiture(s)</h4></div>
-            <div><p><%= link_to "Ajouter une voiture",  new_car_path, class: "button-dashboard-car" %></p></div>
+      <div class="container body-content dashboard-body my-3">
+        <div class="d-flex justify-content-between">
+          <div>
+            <h4>Mes voiture(s)</h4>
           </div>
-          <table class="table">
-            <thead>
+          <div>
+            <p><%= link_to "Ajouter une voiture",  new_car_path, class: "button-dashboard-car" %></p>
+          </div>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Infos voiture</th>
+              <th scope="col">Date d'ajout</th>
+              <th scope="col">Disponibilité</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @my_cars.each do |car| %>
               <tr>
-                <th scope="col">Infos voiture</th>
-                <th scope="col">Date</th>
-                <th scope="col">Disponibilité</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Ferrari Italia</td>
-                <td>22/05/2022</td>
-                <td>Available</td>
+                <td><%= car.brand %> <%= car.model %> | <%= car.plate%></td>
+                <td><%= car.created_at %></td>
+                <td><%= car.status %></td>
                 <td>
-                  <%= link_to "#" do %>
+                  <%= link_to edit_car_path(car.id) do %>
                     <i class="fas fa-edit"></i>
                   <% end %>
                 </td>
                 <td>
-                  <%= link_to "#" do %>
+                  <%= link_to car_path(car), :method => 'delete' do %>
                     <i class="fas fa-trash"></i>
                   <% end %>
                 </td>
               </tr>
-            </tbody>
-          </table>
-        </div>
+            <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
+</div>
 </div>
