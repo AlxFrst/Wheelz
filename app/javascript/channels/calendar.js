@@ -13,11 +13,11 @@ import 'flatpickr/dist/flatpickr.css';
 const priceDynamic = () => {
   const priceKm = parseInt(document.querySelector("#kilometers").value)/1000;
   const start = document.querySelector('#calendar').value.split(' ')[0];
-  const end = document.querySelector('#calendar').value.split(' ')[2];
+  const end = document.querySelector('#calendar').value.split(' ')[2] || start;
   const priceCar = parseInt(document.querySelector(".card-top-price h2").innerText);
-  const days = (new Date(end) - new Date(start)) / (1000 * 3600 * 24);
-  const kilometers = parseInt(document.querySelector(".card-top-price h2").innerText);
-  if (days > 1) {
+  const days = ((new Date(end) - new Date(start)) / (1000 * 3600 * 24)) + 1;
+  const kilometers = parseInt(document.querySelector("#kilometers").value);
+  if (days >= 1 && kilometers > 0) {
     document.querySelector(".calcul p").innerText = `${priceCar} x ${days}`;
     document.querySelectorAll(".calcul p")[1].innerText = `${days * priceCar}€`;
     document.querySelectorAll(".total p")[1].innerText = `${(days * priceCar) + (kilometers * priceKm)}€`;
