@@ -4,7 +4,7 @@
       <%= link_to root_path, class: "navbar-brand mt-5" do %>
         <h1>Wheelz</h1>
       <% end %>
-      <p><%= link_to "Profil", dashboard_path %></p>
+      <p><%= link_to "Profil", dashboard_path, class: "active"  %></p>
       <hr>
       <p><%= link_to "My cars", dashboard_my_car_path %></p>
       <hr>
@@ -12,7 +12,7 @@
     </div>
     <div class="col-9 dashboard-content">
       <div class="container header d-flex justify-content-between my-3">
-        <h3>Profil</h3>
+        <h3>Dashboard</h3>
         <div class="avatar-menu d-flex">
           <p><%= current_user.first_name %> <%= current_user.last_name %></p>
           <ul class="user-profil">
@@ -32,34 +32,34 @@
       </div>
       <div class="container body-content dashboard-body my-3">
         <div>
-          <h4>Your profil</h4>
+          <h4>Votre profil</h4>
           <hr>
         </div>
         <div class="d-flex justify-content-evenly">
           <div>
             <ul>
-              <li>First name : <span class="light-li"><%= current_user.first_name %></span></li>
-              <li>Last name : <span class="light-li"><%= current_user.last_name %></span></li>
+              <li>Prénom : <span class="light-li"><%= current_user.first_name %></span></li>
+              <li>Nom de famille : <span class="light-li"><%= current_user.last_name %></span></li>
               <li>Username : <span class="light-li"><%= current_user.username %></span></li>
               <li>Email : <span class="light-li"><%= current_user.email %></span></li>
-              <li>Birthday : <span class="light-li"><%= current_user.birthday %></span></li>
-              <li>Street : <span class="light-li"><%= current_user.street %></span></li>
-              <li>City : <span class="light-li"><%= current_user.city %></span></li>
-              <li>Postal : <span class="light-li"><%= current_user.postal_code %></span></li>
-              <li>Country : <span class="light-li"><%= current_user.country %></span></li>
-              <li>Phone number : <span class="light-li"><%= current_user.phone %></span></li>
+              <li>Date d'anniversaire : <span class="light-li"><%= current_user.birthday %></span></li>
+              <li>Rue : <span class="light-li"><%= current_user.street %></span></li>
+              <li>Ville : <span class="light-li"><%= current_user.city %></span></li>
+              <li>Code postal : <span class="light-li"><%= current_user.postal_code %></span></li>
+              <li>Pays : <span class="light-li"><%= current_user.country %></span></li>
+              <li>Numero de téléphone : <span class="light-li"><%= current_user.phone %></span></li>
             </ul>
           </div>
-          <div class="profil">
-            <h5>Profil picture</h5>
-            <div class="mt-5">
+          <div class="profil mt-4">
+            <h5>Photo de profil</h5>
+            <div class="mt-3 mb-3">
               <% if current_user.avatar.key.nil? %>
                 <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgsaRe2zqH_BBicvUorUseeTaE4kxPL2FmOQ&usqp=CAU", class:'profile-img'%>
               <% else %>
                 <%= cl_image_tag current_user.avatar.key %>
               <% end %>
             </div>
-            <%= link_to 'Modify profil', edit_user_registration_path(current_user) %>
+            <%= link_to 'Modify profil', edit_user_registration_path(current_user), class: "button-dashboard" %>
           </div>
         </div>
       </div>
