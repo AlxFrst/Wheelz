@@ -1,0 +1,19 @@
+.review{
+  .input-field{
+    align-self: center;
+  }
+  #new_booking{
+    margin: 0 auto;
+    width: 60%;
+  }
+  .review-card{
+    margin: 0 auto;
+    width: 60%;
+    #review-car-img{
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 1.3em 1.3em 0 0;
+    }
+  }
+}
