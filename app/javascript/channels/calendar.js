@@ -28,6 +28,7 @@ const initFlatpickr = () => {
   const unavailable = document.querySelector('#unavailable').innerText
   flatpickr("#calendar", {
     mode: "range",
+    allowInput: true,
     disable: JSON.parse(unavailable),
     minDate: new Date()
   });
