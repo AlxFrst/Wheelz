@@ -43,6 +43,7 @@
               <th scope="col">Nom du client</th>
               <th scope="col">Date de début</th>
               <th scope="col">Date de fin</th>
+              <th scope="col">Status</th>
             </tr>
           </thead>
           <tbody>
@@ -53,6 +54,16 @@
                   <td><%= booking.user.first_name %> <%= booking.user.last_name %></td>
                   <td><%= booking.start_date %></td>
                   <td><%= booking.end_date %></td>
+                  <% if booking.status == "accepted" %>
+                    <td>
+                      <p>En attente paiement</p>
+                    </td>
+                    <td>
+                      <%= link_to destroy_booking_path(booking), method: 'delete' do %>
+                        <i class="fas fa-solid fa-trash iframe-red"></i>
+                      <% end %>
+                    </td>
+                  <% end%>
                   <td>
                     <%= link_to accept_request_path(booking), method: 'post' do %>
                       <i class="fas fa-check iframe-green"></i>
@@ -63,6 +74,41 @@
                       <i class="fas fa-ban iframe-red"></i>
                     <% end %>
                   </td>
+                </tr>
+              <% else %>
+                <tr>
+                  <td><%= booking.car.brand %> <%= booking.car.model%></td>
+                  <td><%= booking.user.first_name %> <%= booking.user.last_name %></td>
+                  <td><%= booking.start_date %></td>
+                  <td><%= booking.end_date %></td>
+                  <% if booking.status == "pending_payment" %>
+                    <td>
+                      <p>En attente paiement</p>
+                    </td>
+                    <td>
+                      <%= link_to destroy_booking_path(booking), method: 'delete' do %>
+                        <i class="fas fa-solid fa-trash iframe-red"></i>
+                      <% end %>
+                    </td>
+                  <% elsif booking.status == "accepted"%>
+                    <td>
+                      <p>Accepté</p>
+                    </td>
+                    <td>
+                      <%= link_to destroy_booking_path(booking), method: 'delete' do %>
+                        <i class="fas fa-solid fa-trash iframe-red"></i>
+                      <% end %>
+                    </td>
+                  <% else %>
+                    <td>
+                      <p>Refusé</p>
+                    </td>
+                    <td>
+                      <%= link_to destroy_booking_path(booking), method: 'delete' do %>
+                        <i class="fas fa-solid fa-trash iframe-red"></i>
+                      <% end %>
+                    </td>
+                  <% end %>
                 </tr>
               <% end %>
             <% end %>
