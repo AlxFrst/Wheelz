@@ -26,7 +26,9 @@
           <% end %>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
             <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
-            <%= link_to "Disconnect", destroy_user_session_path, method:'delete', class: "dropdown-item" %>
+            <%= link_to "Mes véhicules", dashboard_my_car_path, class: "dropdown-item" %>
+            <%= link_to "Mes reservations", dashboard_booking_path, class: "dropdown-item" %>
+            <%= link_to "Log out", destroy_user_session_path, method:'delete', class: "dropdown-item" %>
           </div>
         </li>
       </ul>
