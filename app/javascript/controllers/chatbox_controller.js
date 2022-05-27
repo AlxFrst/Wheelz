@@ -20,6 +20,11 @@ export default class extends Controller {
   		// Add the message text with the bubble to the conversation.
   		document.querySelector('.conversation__body').insertAdjacentHTML('beforeend', `<div class="conversation__bubble conversation__bubble--right"><p class="conversation__text">${messageText}</p></div>`);
 
+      // Chatbot reply
+      let botMessage = 'Work in progress'
+      document.querySelector('.conversation__body').insertAdjacentHTML('beforeend', `<div class="conversation__bubble conversation__bubble--left"><p class="conversation__text">${botMessage}</p></div>`);
+
+
   		// Clear the input.
   		document.querySelector('.conversation__write').value = '';
 

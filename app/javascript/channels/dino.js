@@ -6,7 +6,6 @@ var keyHandler = function (event) {
 	// If the key isn't in the pattern, or isn't the current key in the pattern, reset
 	if (pattern.indexOf(event.key) < 0 || event.key !== pattern[current]) {
 		current = 0;
-    console.log('yo');
 		return;
 	}
 
