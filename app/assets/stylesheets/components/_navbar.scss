@@ -104,3 +104,18 @@ div.navbar.navbar-expand-sm.navbar-light.navbar-lewagon > div > ul > p{
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   }
 }
+
+.avatar-large.dropdown-toggle {
+  position: relative;
+}
+
+.notifications {
+  position: absolute;
+  top: 4.3em;
+  right: 0.3em;
+  padding: 4px 8px;
+  background-color: red;
+  border-radius: 50%;
+  display: none;
+  font-size: 7px;
+}
