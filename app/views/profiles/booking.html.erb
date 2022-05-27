@@ -79,7 +79,7 @@
           <thead>
             <tr>
               <th scope="col">Détails de la réservation</th>
-              <th scope="col">Nom du client</th>
+              <th scope="col">Nom du propriétaire</th>
               <th scope="col">Date de début</th>
               <th scope="col">Date de fin</th>
               <th scope="col">Status</th>
@@ -89,7 +89,7 @@
             <% @my_bookings.each do |booking| %>
               <tr>
                 <td><%= booking.car.brand %> <%= booking.car.model%></td>
-                <td><%= booking.user.first_name %> <%= booking.user.last_name %></td>
+                <td><%= booking.car.user.first_name %> <%= booking.car.user.last_name %></td>
                 <td><%= booking.start_date %></td>
                 <td><%= booking.end_date %></td>
                 <% if booking.status == "pending_payment" %>
