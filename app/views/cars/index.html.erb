@@ -1,10 +1,9 @@
-<div class="container">
+<div class="container mt-5 custom-footer">
   <div class="row">
     <div class="col-md-12 d-flex justify-content-between">
       <h3 class="car-counter">Voitures (<%= @cars.count %>)</h3>
     </div>
   </div>
-</div>
 <div class="row row-cols-1 row-cols-md-3 g-4 my-2">
   <% @cars.each do |car| %>
     <div class="col">
@@ -17,9 +16,6 @@
         <div class="card-body">
           <div class="card-header d-flex justify-content-between">
             <h3><%= car.brand %> <%= car.model %></h3>
-            <div class="rating">
-              <p>4.95 ⭐</p>
-            </div>
           </div>
           <p class="card-text"><%= car.description %></p>
           <div class="spec d-flex justify-content-between m-3">
@@ -56,4 +52,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

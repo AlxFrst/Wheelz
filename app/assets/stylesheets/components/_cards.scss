@@ -1,7 +1,7 @@
 
 
 .card {
-  color: grey;
+  color: $gris-plus-clair;
   border-radius: 16px;
   .days {
     opacity: 0.5;
@@ -20,12 +20,12 @@ div.price.d-flex.justify-content-between > a{
   padding: 0;
 
   h3{
-    color: #667080;
+    color: $gris-fonce;
   }
 }
 .card-text{
   p{
-    color: #6E798C;
+    color: $gris-plus-clair;
   }
 }
 .spec{
@@ -41,7 +41,12 @@ div.price.d-flex.justify-content-between > a{
 .card a {
   color: black;
 }
-
+.see-more{
+  color: $gris-fonce;
+  &:hover{
+    color: $red;
+  }
+}
 #car-img{
   width: 100%;
   height: 270px;

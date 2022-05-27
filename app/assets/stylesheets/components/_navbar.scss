@@ -4,27 +4,37 @@
   border-bottom: 1px solid #e5e5e5;
   h1 {
     font-weight: bold;
-    color: #667080;
+    margin-top: 10px;
+    color: $gris-fonce;
   }
   .nav-buttons {
     .signup {
-      background-color: #eef1f4;
-      color: #667080;
+      background-color: $gris-blanc;
+      color: $gris-plus-clair;
       border-radius: 6%;
       margin: 15px;
+      transition: transform .2s;
+      &:hover{
+        transform: scale(1.1);
+      }
     }
     .login {
-      background-color: #667080;
-      color: white;
+      background-color: $gris-fonce;
+      color: $gris-blanc;
       border-radius: 6%;
       margin: 15px;
+      transition: transform .2s;
+      &:hover{
+        transform: scale(1.1);
+      }
     }
   }
   .user-profil {
     color: white;
     cursor: pointer;
     p {
-      color: black;
+      color: $gris-fonce;
+      font-size: 20px;
       margin-bottom: 0;
       margin-right: 10px;
       align-self: center;
@@ -54,9 +64,13 @@ div.navbar.navbar-expand-sm.navbar-light.navbar-lewagon > div > ul > p{
   }
 
   .search-logo {
-    background-color: #fb2618;
-    opacity: 0.6;
+    background-color: $red;
+    opacity: 0.8;
     border-radius: 50%;
+    transition: 0.3s;
+    &:hover{
+      opacity: 1;
+    }
   }
 
   .search-logo i {

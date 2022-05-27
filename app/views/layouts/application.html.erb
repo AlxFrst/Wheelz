@@ -15,9 +15,7 @@
   <body>
     <% if controller.controller_name != 'profiles' %>
       <%= render 'shared/navbar' %>
-      <main class="container my-3">
         <%= yield %>
-      </main>
       <%= render 'shared/footer' %>
     <% else %>
       <%= yield %>
