@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   delete "dashboard-booking/:id", to: "profiles#destroy_booking", as: "destroy_booking"
   post "dashboard-booking/:id/accept", to: "profiles#accept_request", as: "accept_request"
   post "dashboard-booking/:id/decline", to: "profiles#decline_request", as: "decline_request"
+  get 'payment', to: "pages#payment"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

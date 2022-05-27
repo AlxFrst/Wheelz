@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
     @car = Car.find(params[:car_id])
     @booking.car = @car
     if @booking.save
-      redirect_to dashboard_booking_path
+      redirect_to payment_path
     else
       render :new
     end
