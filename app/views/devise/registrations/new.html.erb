@@ -1,17 +1,19 @@
-<h2>Sign up</h2>
-<div class="row justify-content-center">
+<div class="row justify-content-center custom-top-signup custom-footer">
   <div class="col-7">
-    <div class="container devise-user-form">
+   <h2>Inscris-toi</h2>
+    <div class="container devise-user-form mt-3">
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
         <div class="form-inputs">
           <%= f.input :first_name,
                 required: true,
                 autofocus: true,
+                :label => 'Prènom',
                 input_html: { autocomplete: "first-name" }%>
           <%= f.input :last_name,
                 required: true,
                 autofocus: true,
+                :label => 'Nom de famille',
                 input_html: { autocomplete: "last-name" }%>
           <%= f.input :username,
                 required: true,
@@ -24,31 +26,37 @@
                 input_html: { autocomplete: "email" }%>
           <%= f.input :password,
                 required: true,
+                :label => 'Mot de passe',
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
           <%= f.input :password_confirmation,
                 required: true,
+                :label => 'Mot de passe confirmation',
                 input_html: { autocomplete: "new-password" } %>
           <%= f.input :birthday, as: :date, html5: true ,
+                :label => 'Date d\'anniversaire',
                 required: true %>
-          <%= f.input :country, as: :country %>
+          <%= f.input :country,:label => 'Pays', as: :country %>
           <%= f.input :street,
                 required: true,
+                :label => 'Rue',
                 autofocus: true,
                 input_html: { autocomplete: "street" }%>
           <%= f.input :postal_code,
                 required: true,
+                :label => 'Code postal',
                 autofocus: true,
                 input_html: { autocomplete: "postal_code" }%>
           <%= f.input :city,
                 required: true,
+                :label => 'Ville',
                 autofocus: true,
                 input_html: { autocomplete: "city" }%>
-          <%= f.input :license,
+          <%= f.input :license,:label => 'Permis de conduire',
                 required: true %>
         </div>
         <div class="form-actions">
-          <%= f.button :submit, "Sign up", class:"btn btn-primary" %>
+          <%= f.button :submit, "Sign up", class:"signup" %>
         </div>
       <% end %>
     </div>

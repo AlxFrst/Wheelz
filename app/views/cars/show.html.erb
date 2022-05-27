@@ -1,65 +1,83 @@
-<h1>
-  <%= @car.brand %> - <%= @car.model %>
-</h1>
-<div class="upper-image">
-  <a href="#"><%= @car.user.city %></a>
-</div>
-<div id="carSlider" class="carousel slide" data-bs-ride="true">
-  <div class="carousel-inner">
-    <% @car.photos.each do |photo| %>
-      <div class="carousel-item <% if @car.photos.first == photo %> active <% end %>"
-      style='background-image:url("<%= cl_image_path photo.key%>"); height: 30em;'>
-      </div>
-    <% end %>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carSlider" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carSlider" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+<div class="container custom-footer">
+  <h1>
+    <%= @car.brand %> - <%= @car.model %>
+  </h1>
+  <div class="upper-image">
+    <a href="#"><%= @car.user.city %></a>
   </div>
-</div>
-  <section class="back">
-    <div class="left-side">
-      <div class="under-image">
-        <h2><%= @car.user.city %>, <%= @car.user.street %>:</h2>
-        <h3><%= @car.brand %> <%= @car.model %></h3>
-        <p><%= @car.seats %> sièges - <%= @car.energy.capitalize %> - <%= @car.year %> - <%= @car.color %> - <%= @car.horsepower %> hp</p>
-      </div>
-      <div class="describe">
-        <p><%= @car.description %></p>
-      </div>
-      <div class="icons">
-        <i class="fa-solid fa-smoking"></i><i class="fa-solid fa-dog"></i><i class="fa-solid fa-gas-pump"></i>
-      </div>
+  <div id="carSlider" class="carousel slide" data-bs-ride="true">
+    <div class="carousel-inner">
+      <% @car.photos.each do |photo| %>
+        <div class="carousel-item <% if @car.photos.first == photo %> active <% end %>"
+        style='background-image:url("<%= cl_image_path photo.key%>"); height: 30em;'>
+        </div>
+      <% end %>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carSlider" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carSlider" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
-    <div class="card-price">
-      <div class="top-card">
-        <div class="card-top-price">
-          <h2><%= @car.price %></h2>
-          <p>€ / jour</p>
+  </div>
+    <section class="back">
+      <div class="left-side">
+        <div class="under-image">
+          <h2><%= @car.user.city %>, <%= @car.user.street %>:</h2>
+          <h3><%= @car.brand %> <%= @car.model %></h3>
+          <p><%= @car.seats %> sièges - <%= @car.energy.capitalize %> - <%= @car.year %> - <%= @car.color %> - <%= @car.horsepower %> hp - <i class="fa-solid fa-smoking"></i> - <i class="fa-solid fa-dog"></i></p>
+        </div>
+        <div class="describe">
+          <p><%= @car.description %></p>
+        </div>
+        <div class="icons">
+          <section style="width: 100%; height: 34em;"
+            data-controller="mapbox"
+            data-mapbox-latitude-value="<%= @car.latitude %>"
+            data-mapbox-longitude-value="<%= @car.longitude %>"
+            data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          </section>
         </div>
       </div>
-    <% if current_user == nil %>
-      <% session[:previous_url] = "/cars/#{@car.id}/bookings/new"%>
-      <form action="/users/sign_in" method="get" class="row g-3 needs-validation" novalidat>
-    <% else %>
-      <form action= <%= "/cars/#{@car.id}/bookings/new" %> method="get" class="row g-3 needs-validation" novalidat>
-    <% end %>
-      <div class="calkilo">
-        <div class="col-12 calendar">
-          <label for="calendar" class="form-label">Durée</label>
-          <input type="date" class="form-control" id="calendar" name="calendar" required>
+      <div class="card-price">
+        <div class="top-card">
+          <div class="card-top-price">
+            <h2><%= @car.price %></h2>
+            <p>€ / jour</p>
+          </div>
         </div>
-        <div class="col-12">
-          <label for="kilometers" class="form-label">Nombre de kilometres</label>
-          <input type="number" class="form-control" id="kilometers" value='200' name="kilometers" step=100 min=200 max=5000 required>
+      <% if current_user == nil %>
+        <% session[:previous_url] = "/cars/#{@car.id}/bookings/new"%>
+        <form action="/users/sign_in" method="get" class="row g-3 needs-validation" novalidat>
+      <% else %>
+        <form action= <%= "/cars/#{@car.id}/bookings/new" %> method="get" class="row g-3 needs-validation" novalidat>
+      <% end %>
+        <div class="calkilo">
+          <div class="col-12 calendar">
+            <label for="calendar" class="form-label">Durée</label>
+            <input type="date" class="form-control" id="calendar" name="calendar" required>
+          </div>
+          <div class="col-12">
+            <label for="kilometers" class="form-label">Nombre de kilometres</label>
+            <input type="number" class="form-control" id="kilometers" value='200' name="kilometers" step=100 min=200 max=5000 required>
+          </div>
         </div>
+        <div class="d-grid gap-2">
+          <button class="btn btn-danger" type="submit">Reserver</button>
+        </div>
+      <p class='add-comment'>Ajouter un commentaire</p>
+      <input type="text" class='comment' name="comment">
+      <p class='legal'>Le prix total de la location peut varier en fonction du nombre de kilomètres réalisés</p>
+      </form>
+      <div class="calcul">
+        <p><%= @car.price %></p>
+        <p>0€</p>
       </div>
-      <div class="d-grid gap-2">
-        <button class="btn btn-danger" type="submit">Reserver</button>
+      <div class="total">
+        <p>TOTAL</p>
+        <p>0€</p>
       </div>
       <p class='add-comment'>Ajouter un commentaire</p>
       <input type="text" class='comment' name="comment">
@@ -76,10 +94,7 @@
     </div>
   </section>
 
-<section style="width: 100%; height: 40em;"
-  data-controller="mapbox"
-  data-mapbox-latitude-value="<%= @car.latitude %>"
-  data-mapbox-longitude-value="<%= @car.longitude %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></section>
 
-<span id='unavailable' style='display:none'><%= @unavailability.to_json %></span>
+
+  <span id='unavailable' style='display:none'><%= @unavailability.to_json %></span>
+</div>
