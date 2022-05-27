@@ -23,8 +23,8 @@ class CarsController < ApplicationController
   def create
     @car = Car.new(params_validate)
     @car.user = current_user
-    if @car.save!
-      redirect_to car_path(@car)
+    if @car.save
+      redirect_to dashboard_my_car_path
     else
       render :new
     end
@@ -37,7 +37,7 @@ class CarsController < ApplicationController
   def update
     @car = Car.find(params[:id])
     @car.update(params_validate)
-    if @car.save!
+    if @car.save
       redirect_to dashboard_my_car_path
     else
       render :edit
