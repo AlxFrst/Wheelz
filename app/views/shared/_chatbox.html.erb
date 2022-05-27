@@ -1,4 +1,4 @@
-<div class="chatbox">
+<div class="chatbox" data-controller="chatbox">
   <!-- Mask -->
   <div class="mask minimize fixed-bottom">
     <!-- Main container -->
@@ -23,7 +23,7 @@
       <!-- Conversation view -->
       <section class="conversation">
         <!-- Conversation view header -->
-        <header class="conversation__header" data-controller="chatbox">
+        <header class="conversation__header">
           <button class="conversation__btn btn btn--list" title="Conversation list">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
           </button>
@@ -46,7 +46,7 @@
         <!-- Conversation view footer -->
         <footer class="conversation__footer">
           <input type="text" class="conversation__write">
-          <button class="conversation__btn btn btn--send" title="Send message">
+          <button class="conversation__btn btn btn--send" title="Send message" data-action="click->chatbox#">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
           </button>
         </footer>
