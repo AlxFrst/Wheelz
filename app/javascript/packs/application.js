@@ -16,7 +16,10 @@ import "controllers"
 import "bootstrap"
 
 import { initFlatpickr } from "../channels/calendar";
+import { keyHandler } from "../channels/dino";
 
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
 })
+
+document.addEventListener('keydown', keyHandler, false);

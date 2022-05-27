@@ -1,0 +1,56 @@
+<div class="chatbox" data-controller="chatbox">
+  <!-- Mask -->
+  <div class="mask minimize fixed-bottom">
+    <!-- Main container -->
+    <div class="container">
+      <!-- Chat list view -->
+      <section class="list">
+        <!-- Chat list header -->
+        <header class="list__header">
+          <span>Conversations</span>
+        </header>
+        <!-- Chat list -->
+        <div class="list__body">
+          <!-- Chat conversation -->
+          <a id="chat1" class="list__chat">
+            <div class="list__preview">
+              <h3 class="list__user">Density</h3>
+              <span class="list__message">Hello, comment puis-je vous aider?</span>
+            </div>
+          </a>
+        </div>
+      </section>
+      <!-- Conversation view -->
+      <section class="conversation">
+        <!-- Conversation view header -->
+        <header class="conversation__header">
+          <button class="conversation__btn btn btn--list" title="Conversation list">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          </button>
+          <div class="conversation__info">
+            <span class="conversation__status"></span>
+            <span class="conversation__name">Density (BETA)</span>
+          </div>
+          <div class="conversation__header-actions">
+            <button class="conversation__btn btn btn--close" title="Close chat">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+          </div>
+        </header>
+        <!-- Conversation view messages -->
+        <div class="conversation__body">
+          <div class="conversation__bubble conversation__bubble--left">
+            <p class="conversation__text">Hello, comment puis-je vous aider?</p>
+          </div>
+        </div>
+        <!-- Conversation view footer -->
+        <footer class="conversation__footer">
+          <input type="text" class="conversation__write">
+          <button class="conversation__btn btn btn--send" title="Send message" data-action="click->chatbox#">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+          </button>
+        </footer>
+      </section>
+    </div>
+  </div>
+</div>
