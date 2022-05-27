@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
   def new
     @booking = Booking.new
     @car = Car.find(params[:car_id])
-    if session[:params]["calendar"]
+    if session[:params] && session[:params]["calendar"]
       @start_date = session[:params]["calendar"].split[0]
       @end_date = session[:params]["calendar"].split[2]
     else
