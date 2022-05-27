@@ -19,7 +19,9 @@ import { initFlatpickr } from "../channels/calendar";
 import { keyHandler } from "../channels/dino";
 
 document.addEventListener('turbolinks:load', () => {
-  initFlatpickr();
+  if (document.querySelector('.calkilo')) {
+    initFlatpickr();
+  }
 })
 
 document.addEventListener('keydown', keyHandler, false);
